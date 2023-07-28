@@ -6,10 +6,19 @@ name: Angular code build
 on:
   push:
     branches: 
-      - master
+      - main
   pull_request:
     branches: 
-      - master
+      - main
+  workflow_dispatch:
+    inputs:  # Define input parameters
+      parameter1:
+        description: 'Example input parameter 1'
+        required: true
+        default: 'default_value_1'
+      parameter2:
+        description: 'Example input parameter 2'
+        required: false
 
 jobs:
   ubuntu-build:
